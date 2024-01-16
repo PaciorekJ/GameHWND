@@ -1,0 +1,18 @@
+form {
+	width: 100%;
+}
+
+.center::placeholder {
+	text-align: center;
+}
+
+.center input {
+	text-align: center;
+}
+
+h1,
+h2,
+img,
+p {
+	caret-color: transparent;
+}
