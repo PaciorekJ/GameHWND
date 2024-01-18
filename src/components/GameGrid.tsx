@@ -1,10 +1,10 @@
 import { SimpleGrid, Text } from "@chakra-ui/react";
 
 import { GameQuery } from "../App";
-import GameCard from "./GameCard";
 import useGames, { Game } from "../hooks/useGames";
-import GameCardSkeleton from "./GameCardSkeleton";
+import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
+import GameCardSkeleton from "./GameCardSkeleton";
 
 import Pagination from "./Pagination";
 
@@ -20,7 +20,7 @@ const GameGrid = ({ gameQuery, onChangePage }: Props) => {
 	if (error)
 		return (
 			<Text padding={4} textAlign={"center"}>
-				{error} <br /> Please refresh the page
+				{error.message} <br /> Please refresh the page
 			</Text>
 		);
 
@@ -37,7 +37,7 @@ const GameGrid = ({ gameQuery, onChangePage }: Props) => {
 							<GameCardSkeleton />
 						</GameCardContainer>
 					))}
-				{data.map((game: Game) => {
+				{data?.results.map((game: Game) => {
 					return (
 						<GameCardContainer key={game.id}>
 							<GameCard game={game}></GameCard>
@@ -48,7 +48,7 @@ const GameGrid = ({ gameQuery, onChangePage }: Props) => {
 			<Pagination
 				gameQuery={gameQuery}
 				onChangePage={onChangePage}
-				numberOfResults={data.length}></Pagination>
+				numberOfResults={data?.count}></Pagination>
 		</>
 	);
 };

@@ -1,11 +1,5 @@
 export default [
     {
-      "id": 0,
-      "name": "All",
-      "slug": "",
-      "image_background": "https://media.rawg.io/media/games/3c1/3c139f67a73f0bf5ce0d8f2abf83c0d0.jpg",
-    },
-    {
       "id": 4,
       "name": "Action",
       "slug": "action",

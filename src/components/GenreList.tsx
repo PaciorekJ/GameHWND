@@ -15,6 +15,14 @@ interface Props {
 	selectedGenre: Genre | null;
 }
 
+const allGenre = {
+	id: 0,
+	name: "All",
+	slug: "",
+	image_background:
+		"https://media.rawg.io/media/games/3c1/3c139f67a73f0bf5ce0d8f2abf83c0d0.jpg",
+};
+
 const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
 	const { data, error, isLoading } = useGenres();
 
@@ -35,7 +43,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
 							spacing={4}
 						/>
 					)}
-					{data.map((g) => {
+					{[allGenre, ...data?.results].map((g) => {
 						return (
 							<ListItem paddingY={2} key={g.id}>
 								<HStack>

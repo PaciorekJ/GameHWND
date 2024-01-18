@@ -6,12 +6,16 @@ import { useRef } from "react";
 interface Props {
 	gameQuery: GameQuery;
 	onChangePage: (pageNumber: number) => void;
-	numberOfResults: number;
+	numberOfResults?: number;
 }
 
 const resultsPerPage = 20;
 
-const Pagination = ({ gameQuery, onChangePage, numberOfResults }: Props) => {
+const Pagination = ({
+	gameQuery,
+	onChangePage,
+	numberOfResults = 0,
+}: Props) => {
 	const ref = useRef<HTMLInputElement>(null);
 
 	return (
