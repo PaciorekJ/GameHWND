@@ -16,7 +16,7 @@ const useGenres = () => {
     queryKey: ["genres"],
     queryFn: () => clientService.get(),
     staleTime: 24 * 60 * 60 * 1000, // Once everyday
-    initialData: { count: genres.length, results: genres }    
+    initialData: { count: genres.length, next: null, prev: null, results: genres }    
 })};
 
 export default useGenres;

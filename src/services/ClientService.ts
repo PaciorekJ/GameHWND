@@ -8,13 +8,14 @@ interface GetResponse<T> {
     results: T;
 }
 
+const axiosInstance = axios.create({
+    params: {
+        key: "7b5c4fe9580b43b58c5903aaed9b9e0c"
+    },
+    baseURL: "https://api.rawg.io/api",
+});
+
 class ClientService<T> {
-    private axiosInstance = axios.create({
-        params: {
-            key: "7b5c4fe9580b43b58c5903aaed9b9e0c"
-        },
-        baseURL: "https://api.rawg.io/api",
-    });
 
     private endpoint = '';
 
@@ -23,7 +24,7 @@ class ClientService<T> {
     }
 
     get = (config?: AxiosRequestConfig) => {
-        return this.axiosInstance.get<GetResponse<T>>(this.endpoint, config)
+        return axiosInstance.get<GetResponse<T>>(this.endpoint, config)
         .then((res) => res.data);
     }
 }

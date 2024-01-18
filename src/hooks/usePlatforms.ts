@@ -14,10 +14,10 @@ const usePlatforms = () => {
     const clientService = new ClientService<Platform[]>('/platforms/lists/parents');
 
     return useQuery({
-        queryKey: ["platforms"],
-        queryFn: () => clientService.get(),
+        queryKey: ['platforms'],
+        queryFn: () => clientService.get({}).finally(() => console.log("Noom")),
         staleTime: 24 * 60 * 60 * 1000,
-        initialData: {count: platforms.length, results: platforms},
+        initialData: {count: platforms.length, next: null, prev: null, results: platforms},
     });
 };
 
