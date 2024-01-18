@@ -15,7 +15,7 @@ interface Props {
 	selectedId: number | null;
 }
 
-const allGenre = {
+const allGenres = {
 	id: 0,
 	name: "All",
 	slug: "",
@@ -43,7 +43,7 @@ const GenreList = ({ onSelectGenre, selectedId }: Props) => {
 							spacing={4}
 						/>
 					)}
-					{[allGenre, ...(data?.results || [])].map((g) => {
+					{[allGenres, ...(data?.results || [])].map((g) => {
 						return (
 							<ListItem paddingY={2} key={g.id}>
 								<HStack>

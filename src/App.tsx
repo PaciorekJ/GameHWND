@@ -14,13 +14,11 @@ export interface GameQuery {
 	platformId: number | null;
 	sortOrder: string;
 	searchText: string;
-	pageNumber: number;
 }
 
 function App() {
 	const [gameQuery, setGameQuery] = useState<GameQuery>({
 		sortOrder: "",
-		pageNumber: 1,
 	} as GameQuery);
 
 	return (
@@ -44,7 +42,6 @@ function App() {
 							setGameQuery({
 								...gameQuery,
 								genreId: genre.id,
-								pageNumber: 1,
 							})
 						}></GenreList>
 				</GridItem>
@@ -55,7 +52,7 @@ function App() {
 					<HStack justifyContent={"space-between"}>
 						<SearchInput
 							onSearch={(searchText) =>
-								setGameQuery({ ...gameQuery, searchText, pageNumber: 1 })
+								setGameQuery({ ...gameQuery, searchText })
 							}
 						/>
 						<HStack gap={4}>
@@ -64,27 +61,18 @@ function App() {
 									setGameQuery({
 										...gameQuery,
 										platformId: platform.id,
-										pageNumber: 1,
 									});
 								}}
 								selectedId={gameQuery.platformId}></PlatformSelector>
 							<SortSelector
 								sortOrder={gameQuery.sortOrder}
 								onSelectSortOrder={(sortOrder) =>
-									setGameQuery({ ...gameQuery, sortOrder, pageNumber: 1 })
+									setGameQuery({ ...gameQuery, sortOrder })
 								}></SortSelector>
 						</HStack>
 					</HStack>
 				</Box>
-				<GameGrid
-					gameQuery={gameQuery}
-					onChangePage={(pageNumber) => {
-						if (pageNumber) setGameQuery({ ...gameQuery, pageNumber });
-						window.scrollTo({
-							top: 0,
-							behavior: "smooth",
-						});
-					}}></GameGrid>
+				<GameGrid gameQuery={gameQuery}></GameGrid>
 			</GridItem>
 		</Grid>
 	);
