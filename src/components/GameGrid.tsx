@@ -20,7 +20,7 @@ const GameGrid = ({ gameQuery, onChangePage }: Props) => {
 	if (error)
 		return (
 			<Text padding={4} textAlign={"center"}>
-				{error.message} <br /> Please refresh the page
+				{(error as Error).message} <br /> Please refresh the page
 			</Text>
 		);
 
