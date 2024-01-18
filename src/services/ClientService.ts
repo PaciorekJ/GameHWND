@@ -4,7 +4,7 @@ import axios, { AxiosRequestConfig } from "axios";
 interface GetResponse<T> {
     count: number;
     next: string | null;
-    prev: string | null;
+    previous: string | null;
     results: T;
 }
 

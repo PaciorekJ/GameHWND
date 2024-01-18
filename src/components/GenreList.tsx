@@ -43,7 +43,7 @@ const GenreList = ({ onSelectGenre, selectedId }: Props) => {
 							spacing={4}
 						/>
 					)}
-					{[allGenre, ...data?.results].map((g) => {
+					{[allGenre, ...(data?.results || [])].map((g) => {
 						return (
 							<ListItem paddingY={2} key={g.id}>
 								<HStack>

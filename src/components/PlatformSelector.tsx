@@ -13,7 +13,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedId }: Props) => {
 
 	if (error) return null;
 
-	const selectedPlatform = data.results.find((p) => p.id === selectedId);
+	const selectedPlatform = data?.results.find((p) => p.id === selectedId);
 	return (
 		<Menu>
 			<MenuButton as={Button} rightIcon={<BsChevronDown />}>

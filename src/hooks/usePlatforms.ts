@@ -15,9 +15,9 @@ const usePlatforms = () => {
 
     return useQuery({
         queryKey: ['platforms'],
-        queryFn: () => clientService.get({}).finally(() => console.log("Noom")),
+        queryFn: () => clientService.get(),
         staleTime: 24 * 60 * 60 * 1000,
-        initialData: {count: platforms.length, next: null, prev: null, results: platforms},
+        initialData: platforms,
     });
 };
 
