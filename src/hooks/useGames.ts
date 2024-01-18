@@ -1,6 +1,6 @@
 
 import { GameQuery } from "../App";
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { Platform } from "./usePlatforms";
 import ClientService from "../services/ClientService";
 
@@ -17,17 +17,20 @@ const useGames = (gameQuery: GameQuery) => {
 
 	const clientService = new ClientService<Game[]>('/games');
 
-	return useQuery({
+	return useInfiniteQuery({
 		queryKey: ["games", gameQuery],
-		queryFn: () => clientService.get({ 
+		queryFn: ({ pageParam = 1 }) => clientService.get({ 
 				params: {
 					genres: gameQuery.genre?.id, 
 					parent_platforms: gameQuery.platform?.id,
-					page: gameQuery.pageNumber,
+					page: pageParam,
 					ordering: gameQuery.sortOrder,
 					search: gameQuery.searchText
 				}
-			})
+			}),
+		getNextPageParam: (lastPage, allPages) => {
+			return lastPage.next ? allPages.length + 1 : undefined
+		},
 	});
 
 }

@@ -1,4 +1,4 @@
-import { SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Button, SimpleGrid, Text } from "@chakra-ui/react";
 
 import { GameQuery } from "../App";
 import useGames, { Game } from "../hooks/useGames";
@@ -7,6 +7,7 @@ import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
 
 import Pagination from "./Pagination";
+import React from "react";
 
 interface Props {
 	gameQuery: GameQuery;
@@ -14,7 +15,14 @@ interface Props {
 }
 
 const GameGrid = ({ gameQuery, onChangePage }: Props) => {
-	const { data, error, isLoading } = useGames(gameQuery);
+	const {
+		data,
+		error,
+		isLoading,
+		isFetchingNextPage,
+		fetchNextPage,
+		hasNextPage,
+	} = useGames(gameQuery);
 	const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 	if (error)
@@ -25,32 +33,38 @@ const GameGrid = ({ gameQuery, onChangePage }: Props) => {
 		);
 
 	return (
-		<>
-			<SimpleGrid
-				padding={"20px"}
-				columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-				spacing={10}
-				gap={6}>
+		<Box padding={"20px"}>
+			<SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing={10} gap={6}>
 				{isLoading &&
 					skeleton.map((s) => (
 						<GameCardContainer key={s}>
 							<GameCardSkeleton />
 						</GameCardContainer>
 					))}
-				{data?.results.map((game: Game) => {
-					return (
-						<GameCardContainer key={game.id}>
-							<GameCard game={game}></GameCard>
-						</GameCardContainer>
-					);
-				})}
+				{data?.pages.map((page, index) => (
+					<React.Fragment key={index}>
+						{page.results.map((game) => (
+							<GameCardContainer key={game.id}>
+								<GameCard game={game}></GameCard>
+							</GameCardContainer>
+						))}
+					</React.Fragment>
+				))}
 			</SimpleGrid>
-			<Pagination
-				gameQuery={gameQuery}
-				onChangePage={onChangePage}
-				numberOfResults={data?.count}></Pagination>
-		</>
+			{hasNextPage && (
+				<Button marginY={2} onClick={() => fetchNextPage()}>
+					{isFetchingNextPage ? "Loading..." : "Load More"}
+				</Button>
+			)}
+		</Box>
 	);
 };
 
 export default GameGrid;
+
+{
+	/* <Pagination
+	gameQuery={gameQuery}
+	onChangePage={onChangePage}
+	numberOfResults={data?.pageParams}></Pagination> */
+}
