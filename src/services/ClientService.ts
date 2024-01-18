@@ -23,7 +23,7 @@ class ClientService<T> {
         this.endpoint = endpoint;
     }
 
-    get = (config?: AxiosRequestConfig) => {
+    get = (config?: AxiosRequestConfig) =>{
         return axiosInstance.get<GetResponse<T>>(this.endpoint, config)
         .then((res) => res.data);
     }

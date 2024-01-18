@@ -13,20 +13,33 @@ export interface Game {
 	rating_top: number;
 }
 
+interface Query {
+	genres?: number;
+	parent_platforms?: number
+	page?: number;
+	ordering: string;
+	search: string;
+}
+
 const useGames = (gameQuery: GameQuery) => {
 
 	const clientService = new ClientService<Game[]>('/games');
 
+	const paramQuery: Query = {
+		ordering: gameQuery.sortOrder,
+		search: gameQuery.searchText
+	}
+
+	if (gameQuery.genreId)
+		paramQuery["genres"] = gameQuery.genreId;
+
+	if (gameQuery.platformId)
+		paramQuery["parent_platforms"] = gameQuery.platformId;
+
 	return useInfiniteQuery({
 		queryKey: ["games", gameQuery],
 		queryFn: ({ pageParam = 1 }) => clientService.get({ 
-				params: {
-					genres: gameQuery.genre?.id, 
-					parent_platforms: gameQuery.platform?.id,
-					page: pageParam,
-					ordering: gameQuery.sortOrder,
-					search: gameQuery.searchText
-				}
+				params: {...paramQuery, page: pageParam}
 			}),
 		getNextPageParam: (lastPage, allPages) => {
 			return lastPage.next ? allPages.length + 1 : undefined

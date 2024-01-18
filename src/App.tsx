@@ -4,7 +4,6 @@ import Nav from "./components/Nav";
 import { Box, Grid, GridItem, HStack, Show } from "@chakra-ui/react";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
-import { Genre } from "./hooks/useGenre";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/usePlatforms";
 import SortSelector from "./components/SortSelector";
@@ -12,8 +11,8 @@ import GameHeading from "./components/GameHeading";
 import SearchInput from "./components/SearchInput";
 
 export interface GameQuery {
-	genre: Genre | null;
-	platform: Platform | null;
+	genreId: number | null;
+	platformId: number | null;
 	sortOrder: string;
 	searchText: string;
 	pageNumber: number;
@@ -41,11 +40,11 @@ function App() {
 			<Show above="lg">
 				<GridItem paddingX={3} area={"Sidebar"}>
 					<GenreList
-						selectedGenre={gameQuery.genre}
+						selectedId={gameQuery.genreId}
 						onSelectGenre={(genre) =>
 							setGameQuery({
 								...gameQuery,
-								genre: genre.slug ? genre : null,
+								genreId: genre.id,
 								pageNumber: 1,
 							})
 						}></GenreList>
@@ -65,11 +64,11 @@ function App() {
 								onSelectPlatform={(platform) => {
 									setGameQuery({
 										...gameQuery,
-										platform: platform.slug ? platform : null,
+										platformId: platform.id,
 										pageNumber: 1,
 									});
 								}}
-								selectedPlatform={gameQuery.platform}></PlatformSelector>
+								selectedId={gameQuery.platformId}></PlatformSelector>
 							<SortSelector
 								sortOrder={gameQuery.sortOrder}
 								onSelectSortOrder={(sortOrder) =>
