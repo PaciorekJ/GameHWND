@@ -1,9 +1,8 @@
 import { Card, CardBody, Skeleton, SkeletonText } from "@chakra-ui/react";
-import CardConfig from "../components.config/Card.config";
 
 const GameCardSkeleton = () => {
 	return (
-		<Card h={CardConfig.height}>
+		<Card h={{ sm: "580px", md: "400px", lg: "300px", xl: "350px" }}>
 			<Skeleton height={"200px"}></Skeleton>
 			<CardBody>
 				<SkeletonText></SkeletonText>

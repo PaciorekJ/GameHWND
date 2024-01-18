@@ -1,7 +1,7 @@
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { HStack, Icon, Input, Text } from "@chakra-ui/react";
-import { GameQuery } from "../App";
+import { HStack, Icon, Input } from "@chakra-ui/react";
 import { useRef } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { GameQuery } from "../App";
 
 interface Props {
 	gameQuery: GameQuery;

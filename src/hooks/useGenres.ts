@@ -1,5 +1,6 @@
 
 import { useQuery } from "@tanstack/react-query";
+import ms from 'ms';
 import genres from "../data/genres";
 import ClientService from "../services/ClientService";
 
@@ -15,7 +16,7 @@ const useGenres = () => {
     return useQuery({
     queryKey: ["genres"],
     queryFn: () => clientService.get(),
-    staleTime: 24 * 60 * 60 * 1000, // Once everyday
+    staleTime: ms('24h'), // Once everyday
     initialData: genres,
 })};
 

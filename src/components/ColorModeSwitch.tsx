@@ -1,7 +1,6 @@
-import { useColorMode, Icon } from "@chakra-ui/react";
+import { Icon, useColorMode } from "@chakra-ui/react";
 
-import { IoMoon } from "react-icons/io5";
-import { IoMoonOutline } from "react-icons/io5";
+import { IoMoon, IoMoonOutline } from "react-icons/io5";
 
 const ColorModeSwitch = () => {
 	const { colorMode, toggleColorMode } = useColorMode();
