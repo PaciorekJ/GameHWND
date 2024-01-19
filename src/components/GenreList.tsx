@@ -7,13 +7,9 @@ import {
 	ListItem,
 	SkeletonText,
 } from "@chakra-ui/react";
-import useGenres, { Genre } from "../hooks/useGenres";
+import useGenres from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/image-url";
-
-interface Props {
-	onSelectGenre: (genre: Genre) => void;
-	selectedId: number | null;
-}
+import useGameQuery from "../hooks/useGameQuery";
 
 const allGenres = {
 	id: 0,
@@ -23,8 +19,13 @@ const allGenres = {
 		"https://media.rawg.io/media/games/3c1/3c139f67a73f0bf5ce0d8f2abf83c0d0.jpg",
 };
 
-const GenreList = ({ onSelectGenre, selectedId }: Props) => {
+const GenreList = () => {
 	const { data, error, isLoading } = useGenres();
+
+	const {
+		gameQuery: { genreId },
+		setGenreId,
+	} = useGameQuery();
 
 	if (error) return null;
 
@@ -53,12 +54,12 @@ const GenreList = ({ onSelectGenre, selectedId }: Props) => {
 										borderRadius={8}
 										src={getCroppedImageUrl(g.image_background)}></Image>
 									<Button
-										fontWeight={g.id === selectedId ? "bold" : "normal"}
+										fontWeight={g.id === genreId ? "bold" : "normal"}
 										fontSize="lg"
 										whiteSpace={"normal"}
 										textAlign={"left"}
 										variant="link"
-										onClick={() => onSelectGenre(g)}>
+										onClick={() => setGenreId(g.id)}>
 										{g.name}
 									</Button>
 								</HStack>

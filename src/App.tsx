@@ -36,43 +36,21 @@ function App() {
 			</GridItem>
 			<Show above="lg">
 				<GridItem paddingX={3} area={"Sidebar"}>
-					<GenreList
-						selectedId={gameQuery.genreId}
-						onSelectGenre={(genre) =>
-							setGameQuery({
-								...gameQuery,
-								genreId: genre.id,
-							})
-						}></GenreList>
+					<GenreList></GenreList>
 				</GridItem>
 			</Show>
 			<GridItem area={"Content"}>
 				<Box paddingX={5}>
-					<GameHeading gameQuery={gameQuery}></GameHeading>
+					<GameHeading></GameHeading>
 					<HStack justifyContent={"space-between"}>
-						<SearchInput
-							onSearch={(searchText) =>
-								setGameQuery({ ...gameQuery, searchText })
-							}
-						/>
+						<SearchInput />
 						<HStack gap={4}>
-							<PlatformSelector
-								onSelectPlatform={(platform) => {
-									setGameQuery({
-										...gameQuery,
-										platformId: platform.id,
-									});
-								}}
-								selectedId={gameQuery.platformId}></PlatformSelector>
-							<SortSelector
-								sortOrder={gameQuery.sortOrder}
-								onSelectSortOrder={(sortOrder) =>
-									setGameQuery({ ...gameQuery, sortOrder })
-								}></SortSelector>
+							<PlatformSelector></PlatformSelector>
+							<SortSelector></SortSelector>
 						</HStack>
 					</HStack>
 				</Box>
-				<GameGrid gameQuery={gameQuery}></GameGrid>
+				<GameGrid></GameGrid>
 			</GridItem>
 		</Grid>
 	);
