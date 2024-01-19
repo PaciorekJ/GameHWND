@@ -33,7 +33,7 @@ const iconMap: { [key: string]: IconType } = {
 const PlatformIconList = ({ platforms }: Props) => {
 	return (
 		<HStack marginY={2}>
-			{platforms.map((platform) => {
+			{platforms?.map((platform) => {
 				if (!iconMap[platform.slug]) return null;
 				return (
 					<Icon
