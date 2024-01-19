@@ -22,10 +22,8 @@ const allGenres = {
 const GenreList = () => {
 	const { data, error, isLoading } = useGenres();
 
-	const {
-		gameQuery: { genreId },
-		setGenreId,
-	} = useGameQuery();
+	const genreId = useGameQuery((s) => s.gameQuery.genreId);
+	const setGenreId = useGameQuery((s) => s.setGenreId);
 
 	if (error) return null;
 

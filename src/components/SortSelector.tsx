@@ -1,13 +1,11 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import useGameQuery from "../hooks/useGameQuery";
-import { sortOrders, sortOrderDefault } from '../data/sortOrders'
+import { sortOrders, sortOrderDefault } from "../data/sortOrders";
 
 const SortSelector = () => {
-	const {
-		gameQuery: { sortOrder },
-		setSortOrder,
-	} = useGameQuery();
+	const sortOrder = useGameQuery((s) => s.gameQuery.sortOrder);
+	const setSortOrder = useGameQuery((s) => s.setSortOrder);
 
 	return (
 		<Menu>

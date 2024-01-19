@@ -27,7 +27,7 @@ interface Query {
  * Used to retrieve Games using infinite queries form the API
  */
 const useGames = () => {
-	const {gameQuery} = useGameQuery();
+	const gameQuery = useGameQuery(s => s.gameQuery);
 
 	const clientService = new ClientService<Game[]>('/games');
 

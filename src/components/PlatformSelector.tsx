@@ -12,10 +12,8 @@ const allPlatforms: Platform = {
 const PlatformSelector = () => {
 	const { data, error } = usePlatforms();
 
-	const {
-		gameQuery: { platformId },
-		setPlatformId,
-	} = useGameQuery();
+	const platformId = useGameQuery((s) => s.gameQuery.platformId);
+	const setPlatformId = useGameQuery((s) => s.setPlatformId);
 
 	if (error) return null;
 
