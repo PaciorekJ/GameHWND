@@ -23,6 +23,9 @@ interface Query {
 	search: string;
 }
 
+/**
+ * Used to retrieve Games using infinite queries form the API
+ */
 const useGames = () => {
 	const {gameQuery} = useGameQuery();
 

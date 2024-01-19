@@ -10,6 +10,12 @@ export interface Platform {
     slug: string;
 }
 
+
+/**
+ * Retrieve all platforms from the API
+ * Initial data has been provided as stand in data whiling retrieving platform list.
+ * Stale time set to 24 hours
+ */
 const usePlatforms = () => {
 
     const clientService = new ClientService<Platform[]>('/platforms/lists/parents');

@@ -11,6 +11,11 @@ export interface Genre {
     image_background: string;
 }
 
+/**
+ * Retrieve all genres from the API
+ * Initial data has been provided as stand in data whiling retrieving genres list.
+ * Stale time set to 24 hours
+ */
 const useGenres = () => {
     const clientService = new ClientService<Genre[]>('/genres');
     return useQuery({

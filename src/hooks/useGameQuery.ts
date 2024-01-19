@@ -1,5 +1,8 @@
 import { create } from "zustand";
 
+/**
+ * Interface that defines properties to query for games
+ */
 export interface GameQuery {
 	genreId:    number | null;
 	platformId: number | null;
@@ -14,6 +17,11 @@ interface GameQueryStore {
     setPlatformId: (platformId: number) => void;
     setSortOrder: (sortOrder: string) => void;
 }
+
+/**
+ * useGameQuery provides setters for each of the gameQuery
+ * properties and access to the GameQuery object itself
+ */
 
 const useGameQuery = create<GameQueryStore>(set => ({
         gameQuery: {} as GameQuery,
