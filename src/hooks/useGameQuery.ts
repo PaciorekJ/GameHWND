@@ -2,6 +2,7 @@ import { create } from "zustand";
 
 /**
  * Interface that defines properties to query for games
+ * for the UI
  */
 export interface GameQuery {
 	genreId:    number | null;

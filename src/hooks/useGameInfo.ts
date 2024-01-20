@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import ClientService from "../services/ClientService";
-import { Game } from "./useGames";
+import { Game } from "../interfaces/Game";
 
 /** 
  * Takes slug or id of game and will return info specified 

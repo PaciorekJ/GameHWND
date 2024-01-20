@@ -2,19 +2,8 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import ms from "ms";
 import ClientService from "../services/ClientService";
-import { Platform } from "./usePlatforms";
 import useGameQuery from "./useGameQuery";
-
-export interface Game {
-	id: number;
-	name: string;
-	slug: string;
-	description_raw: string;
-    background_image: string;
-    parent_platforms: { platform: Platform }[];
-	metacritic: number;
-	rating_top: number;
-}
+import { Game } from "../interfaces/Game";
 
 // Note: Query interface according to API
 interface Query {
