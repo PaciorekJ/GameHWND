@@ -22,7 +22,7 @@ const usePlatforms = () => {
 
     return useQuery({
         queryKey: ['platforms'],
-        queryFn: () => clientService.get(),
+        queryFn: () => clientService.getAll(),
         staleTime: ms('24h'),
         initialData: platforms,
     });

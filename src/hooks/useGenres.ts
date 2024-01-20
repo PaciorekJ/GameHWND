@@ -20,7 +20,7 @@ const useGenres = () => {
     const clientService = new ClientService<Genre[]>('/genres');
     return useQuery({
     queryKey: ["genres"],
-    queryFn: () => clientService.get(),
+    queryFn: () => clientService.getAll(),
     staleTime: ms('24h'), // Once everyday
     initialData: genres,
 })};

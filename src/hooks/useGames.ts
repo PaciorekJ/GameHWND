@@ -8,6 +8,8 @@ import useGameQuery from "./useGameQuery";
 export interface Game {
 	id: number;
 	name: string;
+	slug: string;
+	description_raw: string;
     background_image: string;
     parent_platforms: { platform: Platform }[];
 	metacritic: number;
@@ -48,7 +50,7 @@ const useGames = () => {
 
 	return useInfiniteQuery({
 		queryKey: ["games", gameQuery],
-		queryFn: ({ pageParam = 1 }) => clientService.get({ 
+		queryFn: ({ pageParam = 1 }) => clientService.getAll({ 
 				params: {...paramQuery, page: pageParam}
 			}),
 		getNextPageParam: (lastPage, allPages) => {
