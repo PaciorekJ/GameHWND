@@ -1,6 +1,7 @@
 import useGameInfo from "../hooks/useGameInfo";
 import { useParams } from "react-router-dom";
 import { Box, Heading, Spinner, Text } from "@chakra-ui/react";
+import ExpandableText from "../components/ExpandableText";
 
 const GameDetailPage = () => {
 	const { slug } = useParams();
@@ -17,7 +18,9 @@ const GameDetailPage = () => {
 			<Heading as={"h1"} pb={4}>
 				{game?.name || "No Game"}
 			</Heading>
-			<Text>{game?.description_raw || "No Description Found"}</Text>
+			<ExpandableText maxChar={500}>
+				{game?.description_raw || "No Description Found"}
+			</ExpandableText>
 		</Box>
 	);
 };
