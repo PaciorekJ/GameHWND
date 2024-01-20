@@ -11,7 +11,7 @@ const ExpandableText = ({ maxChar, children }: Props) => {
 
 	const [isCompressed, setCompressed] = useState(isCompressable);
 
-	const text = isCompressed ? children.substring(0, maxChar) : children;
+	const text = isCompressed ? children.substring(0, maxChar) + "..." : children;
 
 	return (
 		<Box>
@@ -19,10 +19,11 @@ const ExpandableText = ({ maxChar, children }: Props) => {
 			{isCompressable && (
 				<Button
 					margin={4}
+					size={"xs"}
 					fontWeight={"bold"}
 					colorScheme="blue"
 					onClick={() => setCompressed(!isCompressed)}>
-					{isCompressed ? "More" : "Less"}
+					{isCompressed ? "Show More" : "Show Less"}
 				</Button>
 			)}
 		</Box>
