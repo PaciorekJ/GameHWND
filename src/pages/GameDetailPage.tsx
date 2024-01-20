@@ -18,7 +18,7 @@ const GameDetailPage = () => {
 			<Heading as={"h1"} pb={4}>
 				{game?.name || "No Game"}
 			</Heading>
-			<ExpandableText maxChar={500}>
+			<ExpandableText maxChar={300}>
 				{game?.description_raw || "No Description Found"}
 			</ExpandableText>
 		</Box>

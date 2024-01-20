@@ -7,7 +7,7 @@ interface Props {
 }
 
 const ExpandableText = ({ maxChar, children }: Props) => {
-	const isCompressable = children || children?.length > maxChar;
+	const isCompressable = children && children.length > maxChar;
 
 	const [isCompressed, setCompressed] = useState(isCompressable);
 
@@ -17,7 +17,11 @@ const ExpandableText = ({ maxChar, children }: Props) => {
 		<Box>
 			<Text>{text}</Text>
 			{isCompressable && (
-				<Button margin={4} onClick={() => setCompressed(!isCompressed)}>
+				<Button
+					margin={4}
+					fontWeight={"bold"}
+					colorScheme="blue"
+					onClick={() => setCompressed(!isCompressed)}>
 					{isCompressed ? "More" : "Less"}
 				</Button>
 			)}

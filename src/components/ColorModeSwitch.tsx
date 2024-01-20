@@ -13,7 +13,7 @@ const ColorModeSwitch = () => {
 		onClick: toggleColorMode,
 	};
 
-	return <Icon margin={6} {...iconProps} />;
+	return <Icon {...iconProps} />;
 };
 
 export default ColorModeSwitch;

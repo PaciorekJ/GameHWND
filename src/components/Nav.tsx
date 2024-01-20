@@ -9,17 +9,16 @@ const Nav = () => {
 		<Stack
 			justifyContent="space-between"
 			direction={"row"}
-			alignItems={"center"}>
+			alignItems={"center"}
+			margin={4}>
 			<Link to={"/"}>
 				<Logo />
 			</Link>
 			<Heading
 				color={"gray.100"}
 				style={{ textShadow: "1px 1px 2px black" }}
-				padding={4}
 				as={"h1"}
-				size={"4xl"}
-				marginTop={3}>
+				size={"3xl"}>
 				<Highlight query={"Hound"} styles={{ color: "gray.300" }}>
 					GameHound
 				</Highlight>
