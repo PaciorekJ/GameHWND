@@ -1,27 +1,17 @@
 import useGameInfo from "../hooks/useGameInfo";
 import { useParams } from "react-router-dom";
-import {
-	Box,
-	Grid,
-	GridItem,
-	Heading,
-	SimpleGrid,
-	Spinner,
-	Stack,
-	Text,
-} from "@chakra-ui/react";
+import { Box, Heading, Spinner } from "@chakra-ui/react";
 import ExpandableText from "../components/ExpandableText";
-import MetaDataList from "../components/MetaData";
-import CriticScoreBadge from "../components/CriticScoreBadge";
-import MetaData from "../components/MetaData";
 import GameAttributes from "../components/GameAttributes";
+import GameTrailer from "../components/GameTrailer";
+import ScreenshotGrid from "../components/ScreenshotGrid";
 
 const GameDetailPage = () => {
 	const { slug } = useParams();
 	const { data: game, isLoading, error } = useGameInfo(slug!);
 
 	if (isLoading) {
-		return <Spinner />;
+		return <Spinner id={"1"} />;
 	}
 
 	if (error) throw error;
@@ -43,6 +33,8 @@ const GameDetailPage = () => {
 			</Heading>
 			<ExpandableText maxChar={300}>{game.description_raw}</ExpandableText>
 			<GameAttributes game={game}></GameAttributes>
+			<GameTrailer gameId={game.id}></GameTrailer>
+			<ScreenshotGrid gameId={game.id}></ScreenshotGrid>
 		</Box>
 	);
 };
