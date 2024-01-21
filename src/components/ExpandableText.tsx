@@ -1,5 +1,5 @@
 import { Box, Button, Text } from "@chakra-ui/react";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 
 interface Props {
 	maxChar: number;
@@ -18,8 +18,9 @@ const ExpandableText = ({ maxChar, children }: Props) => {
 			<Text>{text}</Text>
 			{isCompressable && (
 				<Button
-					margin={4}
-					size={"xs"}
+					marginY={2}
+					padding={1}
+					size={"small"}
 					fontWeight={"bold"}
 					colorScheme="blue"
 					onClick={() => setCompressed(!isCompressed)}>

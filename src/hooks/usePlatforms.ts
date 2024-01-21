@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import ms from "ms";
 import platforms from "../data/platforms";
 import ClientService from "../services/ClientService";
-import { Platform } from "../interfaces/Platform";
+import Platform from "../interfaces/Platform";
 
 /**
  * Retrieve all platforms from the API

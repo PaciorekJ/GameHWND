@@ -9,7 +9,7 @@ interface Props {
 const MetaDataList = ({ header, children }: Props) => {
 	return (
 		<Box>
-			<Heading as="dt" fontSize={"md"} color='gray.600'>
+			<Heading as="dt" fontWeight={"bold"} fontSize={"md"} color="gray.600">
 				{header}
 			</Heading>
 			<dd>{children}</dd>

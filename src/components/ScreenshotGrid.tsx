@@ -8,7 +8,7 @@ interface Props {
 const ScreenshotGrid = ({ gameId }: Props) => {
 	const { data, isLoading, error } = useScreenshots(gameId);
 
-	if (!data || isLoading) return;
+	if (!data || isLoading) return null;
 
 	if (error) throw error;
 

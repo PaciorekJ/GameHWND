@@ -3,6 +3,7 @@ import { Heading, Highlight, Stack } from "@chakra-ui/react";
 import ColorModeSwitch from "./ColorModeSwitch";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
+import SearchInput from "./SearchInput";
 
 const Nav = () => {
 	return (
@@ -14,15 +15,7 @@ const Nav = () => {
 			<Link to={"/"}>
 				<Logo />
 			</Link>
-			<Heading
-				color={"gray.100"}
-				style={{ textShadow: "1px 1px 2px black" }}
-				as={"h1"}
-				size={"3xl"}>
-				<Highlight query={"Hound"} styles={{ color: "gray.300" }}>
-					GameHound
-				</Highlight>
-			</Heading>
+			<SearchInput />
 			<ColorModeSwitch></ColorModeSwitch>
 		</Stack>
 	);

@@ -1,4 +1,11 @@
-import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
+import {
+	Grid,
+	GridItem,
+	HStack,
+	Heading,
+	Highlight,
+	Show,
+} from "@chakra-ui/react";
 import GameHeading from "../components/GameHeading";
 import GenreList from "../components/GenreList";
 import PlatformSelector from "../components/PlatformSelector";
@@ -23,9 +30,18 @@ const HomePage = () => {
 				</GridItem>
 			</Show>
 			<GridItem area={"Content"}>
+				<Heading
+					textAlign={"center"}
+					color={"gray.100"}
+					style={{ textShadow: "1px 1px 2px black" }}
+					as={"h1"}
+					size={"3xl"}>
+					<Highlight query={"Hound"} styles={{ color: "gray.300" }}>
+						GameHound
+					</Highlight>
+				</Heading>
 				<GameHeading></GameHeading>
 				<HStack marginY={4} justifyContent={"space-between"}>
-					<SearchInput />
 					<HStack gap={4}>
 						<PlatformSelector></PlatformSelector>
 						<SortSelector></SortSelector>

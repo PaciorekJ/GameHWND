@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import ms from 'ms';
 import genres from "../data/genres";
 import ClientService from "../services/ClientService";
-import { Genre } from "../interfaces/Genre";
+import Genre from "../interfaces/Genre";
 
 /**
  * Retrieve all genres from the API
