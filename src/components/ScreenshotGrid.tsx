@@ -13,7 +13,10 @@ const ScreenshotGrid = ({ gameId }: Props) => {
 	if (error) throw error;
 
 	return (
-		<SimpleGrid templateColumns={"repeat(2, 1fr)"} column={{ sm: 1, md: 2 }}>
+		<SimpleGrid
+			spacing={2}
+			templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
+			column={{ base: 1, md: 2 }}>
 			{data.results.map((ss) => (
 				<Image key={ss.id} src={ss.image} alt="Image of Game" />
 			))}
