@@ -30,7 +30,7 @@ const HomePage = () => {
 					<GenreList></GenreList>
 				</GridItem>
 			</Show>
-			<GridItem area={"Content"}>
+			<GridItem marginRight={2} area={"Content"}>
 				<Heading
 					textAlign={"center"}
 					color={"gray.100"}
