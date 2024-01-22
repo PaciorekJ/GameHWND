@@ -11,20 +11,20 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
 	return (
-		<Card h={{ sm: "580px", md: "400px", lg: "300px", xl: "350px" }}>
-			<Image src={getCroppedImageUrl(game.background_image)}></Image>
-			<CardBody>
-				<HStack justifyContent={"space-between"}>
-					<PlatformIconList
-						platforms={game.parent_platforms?.map(({ platform }) => platform)}
-					/>
-					<CriticScoreBadge metacritic={game.metacritic}></CriticScoreBadge>
-				</HStack>
-				<Heading fontSize={"2xl"}>
-					<Link to={`/game/${game.slug}`}>{game.name}</Link>
-				</Heading>
-			</CardBody>
-		</Card>
+		<Link to={`/game/${game.slug}`}>
+			<Card h={{ sm: "580px", md: "400px", lg: "300px", xl: "350px" }}>
+				<Image src={getCroppedImageUrl(game.background_image)}></Image>
+				<CardBody>
+					<HStack justifyContent={"space-between"}>
+						<PlatformIconList
+							platforms={game.parent_platforms?.map(({ platform }) => platform)}
+						/>
+						<CriticScoreBadge metacritic={game.metacritic}></CriticScoreBadge>
+					</HStack>
+					<Heading fontSize={"2xl"}>{game.name}</Heading>
+				</CardBody>
+			</Card>
+		</Link>
 	);
 };
 
