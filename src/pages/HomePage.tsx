@@ -9,9 +9,9 @@ import {
 import GameHeading from "../components/GameHeading";
 import GenreList from "../components/GenreList";
 import PlatformSelector from "../components/PlatformSelector";
-import SearchInput from "../components/SearchInput/SearchInput";
 import SortSelector from "../components/SortSelector";
 import GameGrid from "../components/GameGrid";
+import GenreSelector from "../components/GenreSelector";
 
 const HomePage = () => {
 	return (
@@ -45,6 +45,9 @@ const HomePage = () => {
 					<HStack gap={4}>
 						<PlatformSelector></PlatformSelector>
 						<SortSelector></SortSelector>
+						<Show below="lg">
+							<GenreSelector></GenreSelector>
+						</Show>
 					</HStack>
 				</HStack>
 				<GameGrid></GameGrid>
