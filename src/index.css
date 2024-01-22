@@ -1,21 +1,8 @@
-
 body {
 	box-sizing: border-box;
 	overflow-x: hidden;
 	padding: 0 2rem;
 	width: 100vw;
-}
-
-form {
-	width: 100%;
-}
-
-.center::placeholder {
-	text-align: center;
-}
-
-.center input {
-	text-align: center;
 }
 
 h1,

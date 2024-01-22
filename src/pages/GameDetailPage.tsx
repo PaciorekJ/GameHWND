@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { GridItem, Heading, SimpleGrid, Spinner } from "@chakra-ui/react";
 import ExpandableText from "../components/ExpandableText";
 import GameAttributes from "../components/GameAttributes";
-import GameTrailer from "../components/GameTrailer";
+import GameTrailer from "../components/GameTrailer/GameTrailer";
 import ScreenshotGrid from "../components/ScreenshotGrid";
 
 const GameDetailPage = () => {

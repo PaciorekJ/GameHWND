@@ -9,7 +9,7 @@ import {
 import GameHeading from "../components/GameHeading";
 import GenreList from "../components/GenreList";
 import PlatformSelector from "../components/PlatformSelector";
-import SearchInput from "../components/SearchInput";
+import SearchInput from "../components/SearchInput/SearchInput";
 import SortSelector from "../components/SortSelector";
 import GameGrid from "../components/GameGrid";
 

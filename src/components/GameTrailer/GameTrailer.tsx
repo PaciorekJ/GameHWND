@@ -1,4 +1,5 @@
-import useTrailers from "../hooks/useTrailers";
+import useTrailers from "../../hooks/useTrailers";
+import "./index.css";
 
 interface Props {
 	gameId: number;
