@@ -14,13 +14,12 @@ const ExpandableText = ({ maxChar, children }: Props) => {
 	const text = isCompressed ? children.substring(0, maxChar) + "..." : children;
 
 	return (
-		<Box>
-			<Text>{text}</Text>
+		<Box marginBottom={4}>
+			<Text letterSpacing={0.5}>{text}</Text>
 			{isCompressable && (
 				<Button
-					marginY={2}
-					marginBottom={4}
-					padding={1}
+					padding={2}
+					marginTop={2}
 					size={"small"}
 					fontWeight={"bold"}
 					colorScheme="blue"

@@ -7,7 +7,7 @@ import GameCardSkeleton from "./GameCardSkeleton";
 
 import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import GameGridSpinner from "./GameGridSpinner";
+import Loader from "./Loader";
 
 const GameGrid = () => {
 	const { data, error, isLoading, fetchNextPage, hasNextPage } = useGames();
@@ -24,7 +24,13 @@ const GameGrid = () => {
 	return (
 		<InfiniteScroll
 			hasMore={!!hasNextPage}
-			loader={<GameGridSpinner />}
+			loader={
+				<Loader
+					margin={"30px"}
+					size={{ base: "50px", md: "70px", lg: "100px" }}
+					isCentered={true}
+				/>
+			}
 			next={fetchNextPage}
 			dataLength={
 				data?.pages.reduce((acc, page) => acc + page.results.length, 0) || 0
