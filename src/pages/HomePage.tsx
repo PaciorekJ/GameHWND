@@ -5,6 +5,7 @@ import {
 	Heading,
 	Highlight,
 	Show,
+	Stack,
 } from "@chakra-ui/react";
 import GameHeading from "../components/GameHeading";
 import GenreList from "../components/GenreList";
@@ -41,14 +42,12 @@ const HomePage = () => {
 					</Highlight>
 				</Heading>
 				<GameHeading></GameHeading>
-				<HStack marginY={4} justifyContent={"space-between"}>
-					<HStack gap={4}>
-						<PlatformSelector></PlatformSelector>
-						<SortSelector></SortSelector>
-						<Show below="lg">
-							<GenreSelector></GenreSelector>
-						</Show>
-					</HStack>
+				<HStack marginY={4}>
+					<PlatformSelector></PlatformSelector>
+					<SortSelector></SortSelector>
+					<Show below="lg">
+						<GenreSelector></GenreSelector>
+					</Show>
 				</HStack>
 				<GameGrid></GameGrid>
 			</GridItem>
