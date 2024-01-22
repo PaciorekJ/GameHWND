@@ -7,10 +7,10 @@ import GameCardSkeleton from "./GameCardSkeleton";
 
 import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+import GameGridSpinner from "./GameGridSpinner";
 
 const GameGrid = () => {
-	const { data, error, isLoading, fetchNextPage, hasNextPage } =
-		useGames();
+	const { data, error, isLoading, fetchNextPage, hasNextPage } = useGames();
 
 	const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -24,16 +24,12 @@ const GameGrid = () => {
 	return (
 		<InfiniteScroll
 			hasMore={!!hasNextPage}
-			loader={<Spinner></Spinner>}
+			loader={<GameGridSpinner />}
 			next={fetchNextPage}
 			dataLength={
 				data?.pages.reduce((acc, page) => acc + page.results.length, 0) || 0
 			}>
-			<SimpleGrid
-				columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-				spacing={10}
-				padding={2}
-				gap={6}>
+			<SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} gap={6}>
 				{isLoading &&
 					skeleton.map((s) => (
 						<GameCardContainer key={s}>
