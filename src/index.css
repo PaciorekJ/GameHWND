@@ -9,12 +9,6 @@ body {
 	width: 100vw;
 }
 
-@media (max-width: 800px) {
-	body {
-		padding: 0;
-	}
-}
-
 h1,
 h2,
 img,
