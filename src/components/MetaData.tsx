@@ -6,7 +6,7 @@ interface Props {
 	children: ReactNode | ReactNode[];
 }
 
-const MetaDataList = ({ header, children }: Props) => {
+const MetaData = ({ header, children }: Props) => {
 	return (
 		<Box>
 			<Heading as="dt" fontWeight={"bold"} fontSize={"md"} color="gray.600">
@@ -17,4 +17,4 @@ const MetaDataList = ({ header, children }: Props) => {
 	);
 };
 
-export default MetaDataList;
+export default MetaData;

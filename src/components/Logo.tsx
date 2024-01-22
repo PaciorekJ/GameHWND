@@ -4,7 +4,12 @@ import logo from "../assets/logo.svg";
 
 const Logo = () => {
 	return (
-		<Image boxSize={"60px"} objectFit={"cover"} src={logo} alt="Company Logo" />
+		<Image
+			boxSize={{ base: "20px", md: "40px", lg: "60px" }}
+			objectFit={"cover"}
+			src={logo}
+			alt="Company Logo"
+		/>
 	);
 };
 

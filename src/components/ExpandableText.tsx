@@ -19,6 +19,7 @@ const ExpandableText = ({ maxChar, children }: Props) => {
 			{isCompressable && (
 				<Button
 					marginY={2}
+					marginBottom={4}
 					padding={1}
 					size={"small"}
 					fontWeight={"bold"}
