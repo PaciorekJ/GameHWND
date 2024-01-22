@@ -35,7 +35,7 @@ const GameGrid = () => {
 			dataLength={
 				data?.pages.reduce((acc, page) => acc + page.results.length, 0) || 0
 			}>
-			<SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} gap={6}>
+			<SimpleGrid padding={1} columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} gap={6}>
 				{isLoading &&
 					skeleton.map((s) => (
 						<GameCardContainer key={s}>
