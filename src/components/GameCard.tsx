@@ -12,7 +12,7 @@ interface Props {
 const GameCard = ({ game }: Props) => {
 	return (
 		<Link to={`/game/${game.slug}`}>
-			<Card h={"100%"}>
+			<Card h={"100%"} overflow={"hidden"}>
 				<Image src={getCroppedImageUrl(game.background_image)}></Image>
 				<CardBody>
 					<HStack justifyContent={"space-between"}>
