@@ -7,7 +7,7 @@ import {
 	Show,
 	Stack,
 } from "@chakra-ui/react";
-import GameHeading from "../components/GameHeading";
+import GameHeading from "../components/GameHeading/GameHeading";
 import GenreList from "../components/GenreList";
 import PlatformSelector from "../components/PlatformSelector";
 import SortSelector from "../components/SortSelector";
@@ -26,11 +26,11 @@ const HomePage = () => {
 				lg: "200px 1fr",
 			}}>
 			<Show above="lg">
-				<GridItem paddingX={3} area={"Sidebar"}>
+				<GridItem area={"Sidebar"}>
 					<GenreList></GenreList>
 				</GridItem>
 			</Show>
-			<GridItem marginRight={2} area={"Content"}>
+			<GridItem className="fit-screen" area={"Content"}>
 				<Heading
 					textAlign={"center"}
 					color={"gray.100"}
@@ -42,7 +42,7 @@ const HomePage = () => {
 					</Highlight>
 				</Heading>
 				<GameHeading></GameHeading>
-				<HStack marginY={4}>
+				<HStack id="selector-container">
 					<PlatformSelector></PlatformSelector>
 					<SortSelector></SortSelector>
 					<Show below="lg">

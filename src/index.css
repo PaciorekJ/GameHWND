@@ -1,12 +1,23 @@
-* {
-	box-sizing: border-box;
+body #root,
+body {
+	min-height: 100vh;
+	max-width: 100vw;
+	padding: 0.5rem;
 }
 
-body {
+body * {
 	box-sizing: border-box;
-	overflow-x: hidden;
-	padding: 0 1rem;
-	width: 100vw;
+	max-width: 100%;
+	margin: 0;
+}
+
+/* Solution for grid-item not fitting to viewport */
+.fit-screen {
+	min-width: 100%;
+}
+
+#selector-container {
+	margin-bottom: .5rem;
 }
 
 h1,
