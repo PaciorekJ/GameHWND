@@ -1,10 +1,17 @@
-import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import {
+	Button,
+	Menu,
+	MenuButton,
+	MenuButtonProps,
+	MenuItem,
+	MenuList,
+} from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import useGenres from "../hooks/useGenres";
 import useGameQuery from "../hooks/useGameQuery";
 import { allGenres } from "../data/genres";
 
-const GenreSelector = () => {
+const GenreSelector = (props: MenuButtonProps) => {
 	const { data, error } = useGenres();
 
 	const GenreId = useGameQuery((s) => s.gameQuery.genreId);
@@ -15,7 +22,7 @@ const GenreSelector = () => {
 	const selectedGenre = data?.results.find((p) => p.id === GenreId);
 	return (
 		<Menu>
-			<MenuButton as={Button} rightIcon={<BsChevronDown />}>
+			<MenuButton {...props} as={Button} rightIcon={<BsChevronDown />}>
 				{selectedGenre?.name || "Genre"}
 			</MenuButton>
 			<MenuList>

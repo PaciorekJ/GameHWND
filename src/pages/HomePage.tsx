@@ -5,7 +5,6 @@ import {
 	Heading,
 	Highlight,
 	Show,
-	Stack,
 } from "@chakra-ui/react";
 import GameHeading from "../components/GameHeading/GameHeading";
 import GenreList from "../components/GenreList";
@@ -15,6 +14,15 @@ import GameGrid from "../components/GameGrid";
 import GenreSelector from "../components/GenreSelector";
 
 const HomePage = () => {
+	const selectorProps = {
+		fontSize: {
+			base: ".5rem",
+			sm: ".75rem",
+		},
+		letterSpacing: ".75px",
+		padding: ".5rem",
+	};
+
 	return (
 		<Grid
 			templateAreas={{
@@ -42,11 +50,11 @@ const HomePage = () => {
 					</Highlight>
 				</Heading>
 				<GameHeading></GameHeading>
-				<HStack id="selector-container">
-					<PlatformSelector></PlatformSelector>
-					<SortSelector></SortSelector>
+				<HStack wrap={"wrap"} id="selector-container">
+					<PlatformSelector {...selectorProps}></PlatformSelector>
+					<SortSelector {...selectorProps}></SortSelector>
 					<Show below="lg">
-						<GenreSelector></GenreSelector>
+						<GenreSelector {...selectorProps}></GenreSelector>
 					</Show>
 				</HStack>
 				<GameGrid></GameGrid>
