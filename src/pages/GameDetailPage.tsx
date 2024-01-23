@@ -6,6 +6,7 @@ import {
 	SimpleGrid,
 	Skeleton,
 	SkeletonText,
+	Image,
 } from "@chakra-ui/react";
 import ExpandableText from "../components/ExpandableText";
 import GameAttributes from "../components/GameAttributes";
@@ -39,6 +40,9 @@ const GameDetailPage = () => {
 				<Heading as={"h1"} pb={2}>
 					<Skeleton isLoaded={!isLoading}>{game.name}</Skeleton>
 				</Heading>
+				<Skeleton isLoaded={!!game.background_image}>
+					<Image className="game-cover" src={game.background_image} />
+				</Skeleton>
 				{(!isLoading && (
 					<ExpandableText maxChar={300}>{game.description_raw}</ExpandableText>
 				)) || (
