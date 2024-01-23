@@ -12,7 +12,7 @@ const HomePage = () => {
 	const [windowWidth, setWindowWidth] = useState(window.outerWidth);
 
 	window.addEventListener("resize", () => {
-		setWindowWidth(window.innerWidth);
+		setWindowWidth(window.outerWidth);
 	});
 
 	const selectorProps = {
