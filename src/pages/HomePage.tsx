@@ -9,7 +9,7 @@ import CompanyHeading from "../components/CompanyHeading";
 import { useState } from "react";
 
 const HomePage = () => {
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+	const [windowWidth, setWindowWidth] = useState(window.outerWidth);
 
 	window.addEventListener("resize", () => {
 		setWindowWidth(window.innerWidth);
