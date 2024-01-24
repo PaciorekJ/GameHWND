@@ -40,17 +40,15 @@ const HomePage = () => {
 				</GridItem>
 			</Show>
 			<GridItem className="fit-screen" area={"Content"}>
-				<Show above="lg">
-					<Heading
-						textAlign={"center"}
-						color={"gray.100"}
-						style={{ textShadow: "1px 1px 2px black" }}
-						as={"h1"}
-						size={"3xl"}
-						letterSpacing={".2rem"}>
-						Game<span className="highlight-300">HWND</span>
-					</Heading>
-				</Show>
+				<Heading
+					textAlign={"center"}
+					color={"gray.100"}
+					style={{ textShadow: "1px 1px 2px black" }}
+					as={"h1"}
+					size={{ base: "2xl", sm: "3xl" }}
+					letterSpacing={".2rem"}>
+					Game<span className="highlight-300">HWND</span>
+				</Heading>
 				<GameHeading></GameHeading>
 				<HStack
 					flexDirection={windowWidth < 300 ? "column" : "row"}
