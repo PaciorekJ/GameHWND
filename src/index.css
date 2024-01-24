@@ -11,6 +11,10 @@ body * {
 	margin: 0;
 }
 
+.highlight-300 {
+	color: #8fa7bd;
+}
+
 /* Solution for grid-item not fitting to viewport */
 .fit-screen {
 	min-width: 100%;

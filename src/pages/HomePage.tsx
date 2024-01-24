@@ -1,11 +1,4 @@
-import {
-	Grid,
-	GridItem,
-	HStack,
-	Heading,
-	Highlight,
-	Show,
-} from "@chakra-ui/react";
+import { Grid, GridItem, HStack, Heading, Show } from "@chakra-ui/react";
 import GameHeading from "../components/GameHeading/GameHeading";
 import GenreList from "../components/GenreList";
 import PlatformSelector from "../components/PlatformSelector";
@@ -55,9 +48,7 @@ const HomePage = () => {
 						as={"h1"}
 						size={"3xl"}
 						letterSpacing={".2rem"}>
-						<Highlight query={"HWND"} styles={{ color: "gray.300" }}>
-							GameHWND
-						</Highlight>
+						Game<span className="highlight-300">HWND</span>
 					</Heading>
 				</Show>
 				<GameHeading></GameHeading>
