@@ -13,7 +13,9 @@ const GameCard = ({ game }: Props) => {
 	return (
 		<Link to={`/game/${game.slug}`}>
 			<Card h={"100%"} overflow={"hidden"}>
-				<Image src={getCroppedImageUrl(game.background_image)}></Image>
+				<Image
+					src={getCroppedImageUrl(game.background_image)}
+					alt={`Image of ${game.name}`}></Image>
 				<CardBody>
 					<HStack justifyContent={"space-between"}>
 						<PlatformIconList

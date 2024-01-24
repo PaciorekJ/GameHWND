@@ -20,7 +20,7 @@ const CriticScoreBadge = ({ metacritic }: Props) => {
 			paddingX={2}
 			borderRadius={"4px"}
 			colorScheme={color}
-			variant="subtle">
+			variant={metacritic > 95 ? "solid" : "subtle"}>
 			{metacritic ? metacritic : "--"}
 		</Badge>
 	);
