@@ -1,11 +1,17 @@
-import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
+import {
+	Grid,
+	GridItem,
+	HStack,
+	Heading,
+	Highlight,
+	Show,
+} from "@chakra-ui/react";
 import GameHeading from "../components/GameHeading/GameHeading";
 import GenreList from "../components/GenreList";
 import PlatformSelector from "../components/PlatformSelector";
 import SortSelector from "../components/SortSelector";
 import GameGrid from "../components/GameGrid";
 import GenreSelector from "../components/GenreSelector";
-import CompanyHeading from "../components/CompanyHeading";
 import { useState } from "react";
 
 const HomePage = () => {
@@ -42,7 +48,17 @@ const HomePage = () => {
 			</Show>
 			<GridItem className="fit-screen" area={"Content"}>
 				<Show above="lg">
-					<CompanyHeading />
+					<Heading
+						textAlign={"center"}
+						color={"gray.100"}
+						style={{ textShadow: "1px 1px 2px black" }}
+						as={"h1"}
+						size={"3xl"}
+						letterSpacing={".2rem"}>
+						<Highlight query={"HWND"} styles={{ color: "gray.300" }}>
+							GameHWND
+						</Highlight>
+					</Heading>
 				</Show>
 				<GameHeading></GameHeading>
 				<HStack
