@@ -1,6 +1,6 @@
-import { useQuery } from "@tanstack/react-query"
-import ClientService from "../services/ClientService"
+import { useQuery } from "@tanstack/react-query";
 import Trailer from "../interfaces/Trailer";
+import ClientService from "../services/ClientService";
 
 const useTrailers = (id: number) => {
     
@@ -8,7 +8,7 @@ const useTrailers = (id: number) => {
 
     return useQuery({
         queryKey: ["trailers", id],
-        queryFn: () => clientService.getAll()
+        queryFn: clientService.getAll
     })
 }
 

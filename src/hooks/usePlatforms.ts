@@ -2,8 +2,8 @@
 import { useQuery } from "@tanstack/react-query";
 import ms from "ms";
 import platforms from "../data/platforms";
-import ClientService from "../services/ClientService";
 import Platform from "../interfaces/Platform";
+import ClientService from "../services/ClientService";
 
 /**
  * Retrieve all platforms from the API
@@ -15,7 +15,7 @@ const usePlatforms = () => {
     const clientService = new ClientService<Platform[]>('/platforms/lists/parents');
     return useQuery({
         queryKey: ['platforms'],
-        queryFn: () => clientService.getAll(),
+        queryFn: clientService.getAll,
         staleTime: ms('24h'),
         initialData: platforms,
     });

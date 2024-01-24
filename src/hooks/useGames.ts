@@ -1,9 +1,9 @@
 
 import { useInfiniteQuery } from "@tanstack/react-query";
 import ms from "ms";
+import Game from "../interfaces/Game";
 import ClientService from "../services/ClientService";
 import useGameQuery from "./useGameQuery";
-import Game from "../interfaces/Game";
 
 // Note: Query interface according to API
 interface Query {
