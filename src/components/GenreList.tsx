@@ -44,7 +44,9 @@ const GenreList = () => {
 										objectFit={"cover"}
 										boxSize={"32px"}
 										borderRadius={8}
-										src={getCroppedImageUrl(g.image_background)}></Image>
+										src={getCroppedImageUrl(g.image_background)}
+										alt={`${g.name} genre image`}
+									/>
 									<Button
 										fontWeight={g.id === genreId ? "bold" : "normal"}
 										fontSize="lg"
