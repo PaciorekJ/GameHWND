@@ -1,19 +1,12 @@
 import { Grid, GridItem, HStack, Heading, Show } from "@chakra-ui/react";
+import GameGrid from "../components/GameGrid";
 import GameHeading from "../components/GameHeading/GameHeading";
 import GenreList from "../components/GenreList";
+import GenreSelector from "../components/GenreSelector";
 import PlatformSelector from "../components/PlatformSelector";
 import SortSelector from "../components/SortSelector";
-import GameGrid from "../components/GameGrid";
-import GenreSelector from "../components/GenreSelector";
-import { useState } from "react";
 
 const HomePage = () => {
-	const [windowWidth, setWindowWidth] = useState(window.outerWidth);
-
-	window.addEventListener("resize", () => {
-		setWindowWidth(window.outerWidth);
-	});
-
 	const selectorProps = {
 		fontSize: {
 			base: ".5rem",
@@ -21,7 +14,6 @@ const HomePage = () => {
 		},
 		letterSpacing: ".75px",
 		padding: ".5rem",
-		width: windowWidth < 300 ? "100%" : "auto",
 	};
 
 	return (
@@ -50,9 +42,7 @@ const HomePage = () => {
 					Game<span className="highlight-300">HWND</span>
 				</Heading>
 				<GameHeading></GameHeading>
-				<HStack
-					flexDirection={windowWidth > 300 ? "row" : "column"}
-					id="selector-container">
+				<HStack id="selector-container">
 					<PlatformSelector {...selectorProps}></PlatformSelector>
 					<SortSelector {...selectorProps}></SortSelector>
 					<Show below="lg">
