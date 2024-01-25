@@ -73,12 +73,13 @@ const GameDetailPage = () => {
 					<Link to={game.website}>
 						<Button
 							size={{ base: "sm", sm: "xl" }}
-							fontSize={{ base: "xs", sm: "xl" }}
+							fontSize={{ base: ".5rem", sm: "1.0rem", lg: "1.3rem" }}
 							marginY={4}
 							padding={4}
 							border="4px double"
 							fontWeight={900}
-							borderColor="gray.500">
+							borderColor="gray.500"
+							style={{ textOverflow: "wrap" }}>
 							Learn More About {game.name}
 						</Button>
 					</Link>

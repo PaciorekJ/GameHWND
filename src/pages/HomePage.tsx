@@ -51,7 +51,7 @@ const HomePage = () => {
 				</Heading>
 				<GameHeading></GameHeading>
 				<HStack
-					flexDirection={windowWidth < 300 ? "column" : "row"}
+					flexDirection={windowWidth > 300 ? "row" : "column"}
 					id="selector-container">
 					<PlatformSelector {...selectorProps}></PlatformSelector>
 					<SortSelector {...selectorProps}></SortSelector>
