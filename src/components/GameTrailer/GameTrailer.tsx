@@ -20,7 +20,7 @@ const GameTrailer = ({ gameId }: Props) => {
 		controls: true,
 	};
 
-	return <video {...videoProps} />;
+	return <video autoPlay muted {...videoProps} />;
 };
 
 export default GameTrailer;
