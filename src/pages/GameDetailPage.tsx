@@ -18,8 +18,8 @@ import Game from "../interfaces/Game";
 import GameStores from "../components/GameStores";
 
 const GameDetailPage = () => {
-	const { id } = useParams();
-	let { data: game, isLoading, error } = useGameInfo(id!);
+	const { slug } = useParams();
+	let { data: game, isLoading, error } = useGameInfo(slug!);
 
 	if (error) throw error;
 
