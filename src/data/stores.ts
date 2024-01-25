@@ -1,13 +1,13 @@
 
-import SteamLogo from '../assets/Steam_logo.svg';
+import SteamLogo from '../assets/Steam_Logo.svg';
 import XboxLogo from '../assets/Xbox_Logo.svg';
-import PlaystationLogo from '../assets/PlayStation_logo.svg';
+import PlaystationLogo from '../assets/PlayStation_Logo.svg';
 import AppStoreLogo from '../assets/App_Store_Logo.svg';
 import GOGLogo from '../assets/GOG_Logo.svg';
 import NintendoStoreLogo from '../assets/Nintendo_Switch_Logo.svg';
 import Xbox360Logo from '../assets/Xbox_360_Logo.svg';
 import GooglePlayLogo from '../assets/Google_Play_Logo.svg';
-import ItchLogo from '../assets/itchio_logo.svg';
+import ItchLogo from '../assets/Itchio_Logo.svg';
 import EpicGamesLogo from '../assets/Epic_Games_Logo.svg';
 
 export default {
