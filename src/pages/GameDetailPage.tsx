@@ -38,7 +38,8 @@ const GameDetailPage = () => {
 	return (
 		<SimpleGrid
 			templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
-			gap={6}>
+			gap={6}
+			className="details">
 			<GridItem>
 				<Heading as={"h1"} pb={2}>
 					<Skeleton isLoaded={!isLoading}>{game.name}</Skeleton>

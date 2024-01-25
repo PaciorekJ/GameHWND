@@ -1,4 +1,3 @@
-body #root,
 body {
 	min-height: 100vh;
 	max-width: 100vw;
@@ -27,6 +26,10 @@ body * {
 .game-cover {
 	border-radius: 50px;
 	margin-bottom: 1rem;
+}
+
+.details > * {
+	min-width: 100%;
 }
 
 h1,
