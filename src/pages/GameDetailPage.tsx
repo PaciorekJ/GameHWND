@@ -41,7 +41,7 @@ const GameDetailPage = () => {
 			gap={6}
 			className="details">
 			<GridItem>
-				<Heading as={"h1"} pb={2}>
+				<Heading fontSize={"4xl"} as={"h1"} pb={2}>
 					<Skeleton isLoaded={!isLoading}>{game.name}</Skeleton>
 				</Heading>
 				<Skeleton isLoaded={!!game.background_image}>
@@ -72,9 +72,12 @@ const GameDetailPage = () => {
 				{game.website && (
 					<Link to={game.website}>
 						<Button
-							size="lg"
+							size={{ base: "sm", sm: "xl" }}
+							fontSize={{ base: "xs", sm: "xl" }}
+							marginY={4}
+							padding={4}
 							border="4px double"
-							fontWeight={700}
+							fontWeight={900}
 							borderColor="gray.500">
 							Learn More About {game.name}
 						</Button>
