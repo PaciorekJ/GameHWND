@@ -11,7 +11,7 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
 	return (
-		<Link to={`/game/${game.slug}`}>
+		<Link to={`/game/${game.slug}/${game.id}`}>
 			<Card h={"100%"} overflow={"hidden"}>
 				<Image
 					src={getCroppedImageUrl(game.background_image)}
