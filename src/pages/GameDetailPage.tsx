@@ -72,6 +72,9 @@ const GameDetailPage = () => {
 						<GameTrailer gameId={game.id} />
 						<ScreenshotCarousel gameId={game.id} />
 					</Box>
+					<Heading as={"h3"} letterSpacing={2}>
+						Buy {game.name} Now!
+					</Heading>
 					<GameStores gameId={game.id} />
 					{game.website && (
 						<Link to={game.website}>
