@@ -13,7 +13,7 @@ import {
 import ExpandableText from "../components/ExpandableText";
 import GameAttributes from "../components/GameAttributes";
 import GameTrailer from "../components/GameTrailer";
-import ScreenshotGrid from "../components/ScreenshotGrid";
+import ScreenshotCarousel from "../components/ScreenshotCarousel";
 import Game from "../interfaces/Game";
 import GameStores from "../components/GameStores";
 
@@ -66,7 +66,7 @@ const GameDetailPage = () => {
 				alignItems={"center"}>
 				<Box>
 					<GameTrailer gameId={game.id} />
-					<ScreenshotGrid gameId={game.id} />
+					<ScreenshotCarousel gameId={game.id} />
 				</Box>
 				<GameStores gameId={game.id} />
 				{game.website && (
