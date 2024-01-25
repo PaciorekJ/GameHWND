@@ -11,7 +11,7 @@ interface Props {
 const GameStores = ({ gameId }: Props) => {
 	const { data, isLoading, error } = useGameStores(gameId);
 
-	if (!data) return <Text>Sorry no Store Could be Found</Text>;
+	if (!data) return null;
 
 	if (error)
 		return (
@@ -43,7 +43,7 @@ const GameStores = ({ gameId }: Props) => {
 						/>
 					</Link>
 				);
-			}) || <Text>Sorry no Store Could be Found</Text>}
+			})}
 		</HStack>
 	);
 };

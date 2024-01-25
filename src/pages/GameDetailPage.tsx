@@ -44,7 +44,7 @@ const GameDetailPage = () => {
 				<Heading fontSize={"4xl"} as={"h1"} pb={2}>
 					<Skeleton isLoaded={!isLoading}>{game.name}</Skeleton>
 				</Heading>
-				<Skeleton isLoaded={!!game.background_image}>
+				<Skeleton isLoaded={!isLoading}>
 					<Image className="game-cover" src={game.background_image} />
 				</Skeleton>
 				{(!isLoading && (
