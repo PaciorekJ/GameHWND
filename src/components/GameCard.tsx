@@ -17,6 +17,7 @@ const GameCard = ({ game }: Props) => {
 					src={getCroppedImageUrl(game.background_image)}
 					height={"200px"}
 					width={"300px"}
+					aspectRatio={"2:1"}
 					objectFit={"fill"}
 					alt={`Image of ${game.name}`}
 				/>
