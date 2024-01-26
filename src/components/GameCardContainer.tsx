@@ -12,6 +12,7 @@ const GameCardContainer = ({ children }: Props) => {
 				transform: "scale(1.01)",
 				transition: "transform .15s ease-in",
 			}}
+			width={"fit-content"}
 			borderRadius={"10px"}
 			border={"2px double" + theme.colors.gray[600]}>
 			{children}
