@@ -8,7 +8,7 @@ const GameCardSkeleton = ({ isLoading }: Props) => {
 	const estimatedGridWidth = (window.outerWidth * 47.4) / 64;
 
 	return (
-		<Card width={"400px"} height={{ base: "329.5px", lg: "329.5px" }}>
+		<Card width={"300px"} height={"350px"}>
 			<Skeleton minH={"200px"} isLoaded={!isLoading} />
 			<CardBody>
 				<SkeletonText

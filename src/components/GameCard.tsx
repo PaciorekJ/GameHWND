@@ -12,14 +12,12 @@ interface Props {
 const GameCard = ({ game }: Props) => {
 	return (
 		<Link to={`/game/${game.slug}`}>
-			<Card
-				height={{ base: "329.5px", lg: "329.5px" }}
-				width={"400px"}
-				overflow={"hidden"}>
+			<Card height={"350px"} width={"300px"} overflow={"hidden"}>
 				<Image
 					src={getCroppedImageUrl(game.background_image)}
 					height={"200px"}
-					width={"400px"}
+					width={"300px"}
+					objectFit={"fill"}
 					alt={`Image of ${game.name}`}
 				/>
 				<CardBody>

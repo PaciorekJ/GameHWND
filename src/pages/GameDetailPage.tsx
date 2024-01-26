@@ -16,7 +16,6 @@ import GameAttributes from "../components/GameAttributes";
 import GameTrailer from "../components/GameTrailer";
 import ScreenshotCarousel from "../components/ScreenshotCarousel";
 import GameStores from "../components/GameStores";
-import React from "react";
 import Game from "../interfaces/Game";
 
 const GameDetailPage = () => {
