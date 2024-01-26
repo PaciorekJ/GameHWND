@@ -16,8 +16,6 @@ const GameCard = ({ game, isOffScreen = true }: Props) => {
 			<Card height={"350px"} width={"300px"} overflow={"hidden"}>
 				<Image
 					src={getCroppedImageUrl(game.background_image)}
-					height={"200px"}
-					width={"300px"}
 					aspectRatio={"2:1"}
 					objectFit={"fill"}
 					alt={`Image of ${game.name}`}
