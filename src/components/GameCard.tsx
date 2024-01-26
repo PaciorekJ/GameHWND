@@ -3,13 +3,14 @@ import Game from "../interfaces/Game";
 import getCroppedImageUrl from "../services/image-url";
 import CriticScoreBadge from "./CriticScoreBadge";
 import PlatformIconList from "./PlatformIconList";
-import { Link } from "react-router-dom";
+import { Link, defer } from "react-router-dom";
 
 interface Props {
 	game: Game;
+	isOffScreen?: boolean;
 }
 
-const GameCard = ({ game }: Props) => {
+const GameCard = ({ game, isOffScreen = true }: Props) => {
 	return (
 		<Link to={`/game/${game.slug}`}>
 			<Card height={"350px"} width={"300px"} overflow={"hidden"}>
@@ -20,6 +21,7 @@ const GameCard = ({ game }: Props) => {
 					aspectRatio={"2:1"}
 					objectFit={"fill"}
 					alt={`Image of ${game.name}`}
+					loading={isOffScreen ? "lazy" : "eager"}
 				/>
 				<CardBody>
 					<HStack justifyContent={"space-between"}>
