@@ -55,7 +55,7 @@ const GameGrid = () => {
 				{(data?.pages || skeleton).map((page, index) => (
 					<React.Fragment key={index}>
 						{page.results.map((game: Game, i: number) => (
-							<GameCardContainer>
+							<GameCardContainer key={game.id || i}>
 								<GameCard
 									game={game}
 									isLoading={isLoading}
