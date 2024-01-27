@@ -6,12 +6,13 @@ import {
 	Image,
 	Skeleton,
 	SkeletonText,
+	Box,
 } from "@chakra-ui/react";
 import Game from "../interfaces/Game";
 import getCroppedImageUrl from "../services/image-url";
 import CriticScoreBadge from "./CriticScoreBadge";
 import PlatformIconList from "./PlatformIconList";
-import { Link, defer } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface Props {
 	game: Game | undefined;
@@ -24,13 +25,17 @@ const GameCard = ({ game, isLoading, isOffScreen = true }: Props) => {
 		<Link to={`/game/${game?.slug}`}>
 			<Card height={"350px"} width={"300px"} overflow={"hidden"}>
 				<Skeleton minH={"200px"} isLoaded={!isLoading}>
-					<Image
-						src={getCroppedImageUrl(game?.background_image || "")}
-						aspectRatio={"2:1"}
-						objectFit={"fill"}
-						alt={`Image of ${game?.name}`}
-						loading={isOffScreen ? "lazy" : "eager"}
-					/>
+					<Box>
+						<Image
+							src={getCroppedImageUrl(game?.background_image || "")}
+							aspectRatio={"2:1"}
+							w={"300px"}
+							h={"200px"}
+							objectFit={"fill"}
+							alt={`Image of ${game?.name}`}
+							loading={isOffScreen ? "lazy" : "eager"}
+						/>
+					</Box>
 				</Skeleton>
 				<CardBody>
 					{isLoading && (
