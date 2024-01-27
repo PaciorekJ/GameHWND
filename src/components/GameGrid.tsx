@@ -3,16 +3,28 @@ import { SimpleGrid, Text } from "@chakra-ui/react";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
-import GameCardSkeleton from "./GameCardSkeleton";
-
 import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Loader from "./Loader";
+import Game from "../interfaces/Game";
 
 const GameGrid = () => {
 	const { data, error, isLoading, fetchNextPage, hasNextPage } = useGames();
 
-	const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+	const skeleton = [
+		{ results: [{} as Game] },
+		{ results: [{} as Game] },
+		{ results: [{} as Game] },
+		{ results: [{} as Game] },
+		{ results: [{} as Game] },
+		{ results: [{} as Game] },
+		{ results: [{} as Game] },
+		{ results: [{} as Game] },
+		{ results: [{} as Game] },
+		{ results: [{} as Game] },
+		{ results: [{} as Game] },
+		{ results: [{} as Game] },
+	];
 
 	if (error)
 		return (
@@ -40,17 +52,15 @@ const GameGrid = () => {
 				padding={1}
 				columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
 				gap={6}>
-				{isLoading &&
-					skeleton.map((s) => (
-						<GameCardContainer key={s}>
-							<GameCardSkeleton isLoading={isLoading} />
-						</GameCardContainer>
-					))}
-				{data?.pages.map((page, index) => (
+				{(data?.pages || skeleton).map((page, index) => (
 					<React.Fragment key={index}>
-						{page.results.map((game, i) => (
-							<GameCardContainer key={game.id}>
-								<GameCard game={game} isOffScreen={i > 12}></GameCard>
+						{page.results.map((game: Game, i: number) => (
+							<GameCardContainer>
+								<GameCard
+									game={game}
+									isLoading={isLoading}
+									isOffScreen={i > 12}
+								/>
 							</GameCardContainer>
 						))}
 					</React.Fragment>
