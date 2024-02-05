@@ -162,7 +162,7 @@ The project is currently on hiatus. While there are no ongoing development effor
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
-[linkedin-url]: www.linkedin.com/in/jasonpaciorek
+[linkedin-url]: https://linkedin.com/in/jasonpaciorek
 
 [resume-url]: https://paciorekj.github.io/
 
