@@ -30,11 +30,14 @@
         <li><a href="#usage">Usage</a></li>
       </ul>
     </li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contact">Contact</a></li>
     <li>
       <a href="#project-status">Project Staus</a>
+      <ul>
+         <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#current-status">Current Status</a></li>
+      </ul>
     </li>
+    <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
@@ -46,10 +49,10 @@
 Finding new and enthralling games can be difficult. Often times I pick up a game at the beginning of the weekend and set it down by the end! GameHWND is a game discovery platform that provides seamless game discovery!
 
 Here's why:
-* Filter by genres, platform, released date, metacritic score, and more for over 500,000+ Game!
+* Filter by genres, platform, released date, Metacritic score, and more for over 500,000+ Games!
 * Find information on each game such as where to buy the game, gameplay screenshots, a game description, and a trailer (if available).
 
-Simplicity and all the game's you've been looking for in one spot!
+Simplicity and all the games you've been looking for in one spot!
 
 <p align="right">
   <a href="#readme-top">
@@ -82,7 +85,7 @@ Simplicity and all the game's you've been looking for in one spot!
 </p>
 
 <!-- USAGE EXAMPLES -->
-## Usage
+### Usage
 
 Navigate to [https://gamehwnd.vercel.app/](https://gamehwnd.vercel.app/)
 
