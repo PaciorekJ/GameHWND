@@ -11,7 +11,7 @@
   <h3 align="center">GameHWND</h3>
 
   <p align="center">
-    An easy to use and intuitive game discovery platform.
+    An easy-to-use and intuitive game discovery platform.
     <br />
     <a href="https://gameHWND.vercel.app">See the site Live!</a>
   </p>
@@ -162,7 +162,7 @@ The project is currently on hiatus. While there are no ongoing development effor
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
-[linkedin-url]: /www.linkedin.com/in/jasonpaciorek
+[linkedin-url]: www.linkedin.com/in/jasonpaciorek
 
 [resume-url]: https://paciorekj.github.io/
 
